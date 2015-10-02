@@ -37,32 +37,21 @@ public class Test {
     }
     
     private void downloadWeather(String usaf, String wban, Timestamp t){
-	downloadWeather(usaf + "-" + wban, t);
+	Calendar calendar = Calendar.getInstance();
+	calendar.setTime(t);
+	calendar.get(Calendar.YEAR);
+	downloadWeather(usaf + "-" + wban, Integer.toString(calendar.get(Calendar.YEAR)));
     }
 
-    private void downloadWeather(String station,Timestamp t){
+    private void downloadWeather(String station,String year){
 	try {
-	    Calendar calendar = Calendar.getInstance();
-	    calendar.setTime(t);
 
 	    GZIPInputStream a = new GZIPInputStream(streamData(this.ftpRoot
-		    + calendar.get(Calendar.YEAR)
-		    + "/" + station + "-" + calendar.get(Calendar.YEAR)
+		    + year
+		    + "/" + station + "-" + year
 		    + ".gz").getInputStream());
 	    BufferedReader bfReader = new BufferedReader(new InputStreamReader(a));
-//	    String temp = null;
 	    ISDParser parser = new ISDParser(bfReader);
-//	    while((temp = bfReader.readLine()) != null){
-//		parser.parse(temp);
-//	    }
-	    //	    Set<String> types = new HashSet<String>();
-	    //	    while((temp = bfReader.readLine()) != null){
-	    ////		types.add(temp.substring(41,46));
-	    //            }
-	    ////	    for (String type: types){
-	    ////		System.out.println(type);
-	    ////	    }
-	    //	    
 	    a.close();
 
 
@@ -95,7 +84,7 @@ public class Test {
 
     public static void main(String[] args) {
 	Test test = new Test();
-	test.downloadWeather("725315-94870",new Timestamp(1443544668646L));
+	test.downloadWeather("725315", "94870",new Timestamp(1443544668646L));
 
     }
 

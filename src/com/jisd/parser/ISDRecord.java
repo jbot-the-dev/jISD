@@ -6,6 +6,7 @@ package com.jisd.parser;
 
 public class ISDRecord {
     public ISDRecord(){
+	
     }
 
 }
