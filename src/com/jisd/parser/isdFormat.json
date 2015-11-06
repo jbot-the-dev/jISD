@@ -1,0 +1,302 @@
+{
+    "dataSections":{
+        "controlData":{
+            "_comments":[
+                         "index is a base 0 character location in the string"
+            ],
+            "mandatory":true,
+            "index":0,
+            "charLength":60,
+            "fields":[
+                {
+                 "description":"Total variable characters (character length of record not including the control and mandatory sections, total = 105 + this value);min: 0000 max: 9999",
+                 "charLength":4,
+                 "index":0
+                },
+                {
+                 "description":"Fixed-Weather-Station USAF Master Station Catalog identifier",
+                 "charLength":6,
+                 "index":4
+                },
+                {
+                 "description":"Fixed-Weather-Station NCEI WBAN identifier;min: 00000 max: 99999",
+                 "charLength":5,
+                 "index":10
+                },
+                {
+                 "description":"Geophysical-Point-Observation date (YYYYMMDD);min: 00000101 max: 99991231",
+                 "charLength":8,
+                 "index":15
+                },
+                {
+                 "description":"Geophysical-Point-Observation time (HHMM);min: 0000 max: 2359",
+                 "charLength":4,
+                 "index":23
+                },
+                {
+                 "description":"Geophysical-Point-Observation data source flag",
+                 "charLength":1,
+                 "index":27,
+                 "valLookup":{
+                    "1":"USAF SURFACE HOURLY observation, candidate for merge with NCEI SURFACE HOURLY (not yet merged, failed element cross-checks)",
+                    "2":"NCEI SURFACE HOURLY observation, candidate for merge with USAF SURFACE HOURLY (not yet merged, failed element cross-checks)",
+                    "3":"USAF SURFACE HOURLY/NCEI SURFACE HOURLY merged observation",
+                    "4":"USAF SURFACE HOURLY observation",
+                    "5":"NCEI SURFACE HOURLY observation",
+                    "6":"ASOS/AWOS observation from NCEI",
+                    "7":"ASOS/AWOS observation merged with USAF SURFACE HOURLY observation",
+                    "8":"MAPSO observation (NCEI)",
+                    "A":"USAF SURFACE HOURLY/NCEI HOURLY PRECIPITATION merged observation, candidate for merge with NCEI SURFACE HOURLY (not yet merged, failed element cross-checks)",
+                    "B":"NCEI SURFACE HOURLY/NCEI HOURLY PRECIPITATION merged observation, candidate for merge with USAF SURFACE HOURLY (not yet merged, failed element cross-checks)",
+                    "C":"USAF SURFACE HOURLY/NCEI SURFACE HOURLY/NCEI HOURLY PRECIPITATION merged observation",
+                    "D":"USAF SURFACE HOURLY/NCEI HOURLY PRECIPITATION merged observation",
+                    "E":"NCEI SURFACE HOURLY/NCEI HOURLY PRECIPITATION merged observation",
+                    "F":"Form OMR/1001 – Weather Bureau city office (keyed data)",
+                    "G":"SAO surface airways observation, pre-1949 (keyed data)",
+                    "H":"SAO surface airways observation, 1965-1981 format/period (keyed data)",
+                    "I":"Climate Reference Network observation",
+                    "J":"Cooperative Network observation",
+                    "K":"Radiation Network observation",
+                    "L":"Data from Climate Data Modernization Program (CDMP) data source",
+                    "M":"Data from National Renewable Energy Laboratory (NREL) data source",
+                    "N":"NCAR / NCEI cooperative effort (various national datasets)",
+                    "O":"Summary observation created by NCEI using hourly observations that may not share the same data source flag",
+                    "9":"missing"
+                    
+                 }
+                },
+                {
+                 "description":"Geophysical-Point-Observation latitude coordinate;min: -90000 max: +90000",
+                 "charLength":6,
+                 "index":28,
+                 "scaleFactor": 1000,
+                 "valLookup":{
+                    "+99999":"missing"
+                 },
+                 "units":"angular degrees"
+                },
+                {
+                 "description":"Geophysical-Point-Observation longitude coordinate;min: -179999 max: +180000",
+                 "charLength":7,
+                 "index":34,
+                 "scaleFactor": 1000,
+                 "valLookup":{
+                    "+999999":"missing"
+                 },
+                 "units":"angular degrees"
+                },
+                {
+                 "description":"Geophysical-Report-Type code",
+                 "charLength":5,
+                 "index":41,
+                 "valLookup":{
+                    "AERO":"Aerological report",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "":"",
+                    "99999":"missing"
+                    
+                 }
+                },
+                {
+                 "description":"Geophysical-Point-Observation elevation dimension",
+                 "charLength":5,
+                 "index":46
+                },
+                {
+                 "description":"Fixed-Weather-Station call letter identifier",
+                 "charLength":5,
+                 "index":51
+                },
+                {
+                 "description":"Meteorological-Point-Observation quality control process name",
+                 "charLength":4,
+                 "index":56
+                }
+            ]
+            
+        },
+        "mandatoryData":{
+            "_comments":[
+                         ""
+            ],
+            "mandatory":true,
+            "index":60
+          
+        },
+        "additionalData":{
+            "_comments":[
+                         "charLength in section includes the section identifier (2 letters and number)",
+                         "index is a base 0 character location in the string"
+            ],
+            "mandatory":false,
+            "indexString":"ADD",
+            "qualityLookup":{
+                             "0":"Passed gross limits check",
+                             "1":"Passed all quality control checks",
+                             "2":"Suspect",
+                             "3":"Erroneous",
+                             "4":"Passed gross limits check, data originate from an NCEI data source",
+                             "5":"Passed all quality control checks, data originate from an NCEI data source",
+                             "6":"Suspect, data originate from an NCEI data source",
+                             "7":"Erroneous, data originate from an NCEI data source",
+                             "9":"Passed gross limits check if element is present",
+                             "A":"Data value flagged as suspect, but accepted as good value",
+                             "I":"Data value not originally in data, but inserted by validator",
+                             "M":"Manual change made to value based on information provided by NWS or FAA",
+                             "P":"Data value not originally flagged as suspect, but replaced by validator",
+                             "R":"Data value replaced with value computed by NCEI software",
+                             "U":"Data value replaced with edited value"
+            },
+            "sections":[
+                {"identifier":"AA",
+                 "startNo":1,
+                 "endNo":4,
+                 "description":"Liquid Precipitation",
+                 "charLength":11,
+                 "fields":[{
+                                "description":"ocurrence identifier",
+                                "charLength":3,
+                                "index":0
+                           },
+                           {
+                                "description":"period quantity in hours",
+                                "charLength":2,
+                                "units":"hours",
+                                "scaleFactor":1,
+                                "index":3,
+                                "nullVal":99
+                           },
+                           {
+                                "description":"depth dimension",
+                                "charLength":4,
+                                "units":"millimeters",
+                                "scaleFactor":10,
+                                "index":5,
+                                "nullVal":9999
+                           },
+                           {
+                                "description":"condition code",
+                                "charLength":1,
+                                "index":9,
+                                "valLookup":{
+                                             "1":"Measurement impossible of inaccurate",
+                                             "2":"Trace",
+                                             "3":"Begin accumulated period (precipitation amount missing until end of accumulated period)",
+                                             "4":"End accumulated period",
+                                             "5":"Begin deleted period (precipitation amount missing due to a data problem)",
+                                             "6":"End deleted period",
+                                             "7":"Begin missing period",
+                                             "8":"End missing period",
+                                             "E":"Estimated data value (eg, from nearby station)",
+                                             "I":"Incomplete precipitation amount, excludes one or more missing reports, such as one or more 15-minute reports not included in the 1-hour precipitation total",
+                                             "J":"Incomplete precipitation amount, excludes one or more erroneous reports, such as one or more 1-hour precipitation amounts excluded from the 24-hour total",
+                                             "9":"missing"
+                                            }
+                           },
+                           {
+                                "description":"quality code",
+                                "charLength":1,
+                                "index":10,
+                                "valLookup":{"$ref":"#/additionalData/qualityLookup"}
+                           }
+                          ]
+                },
+                {"identifier":"AO",
+                 "startNo":1,
+                 "endNo":4,
+                 "description":"Liquid Precipitation",
+                 "charLength":11,
+                 "fields":[{
+                                "description":"ocurrence identifier",
+                                "charLength":3,
+                                "index":0
+                           },
+                           {
+                                "description":"period quantity in minutes",
+                                "charLength":2,
+                                "units":"minutes",
+                                "scaleFactor":1,
+                                "index":3
+                           },
+                           {
+                                "description":"depth dimension",
+                                "charLength":4,
+                                "units":"millimeters",
+                                "scaleFactor":10,
+                                "index":5
+                           },
+                           {
+                                "description":"condition code",
+                                "charLength":1,
+                                "index":9
+                           },
+                           {
+                                "description":"quality code",
+                                "charLength":1,
+                                "index":10
+                           }
+                          ]
+                }
+            ]
+        },
+        "remarks":{
+            "_comments":[
+                         ""
+            ],
+            "mandatory":false,
+            "indexString":"REM"
+        },
+        "eqd":{
+            "_comments":[
+                         ""
+            ],
+            "mandatory":false,
+            "indexString":"EQD"
+          
+        },
+        "ood":{
+            "_comments":[
+                         ""
+            ],
+            "mandatory":false,
+            "indexString":"QNN"
+          
+        }
+    }
+}
